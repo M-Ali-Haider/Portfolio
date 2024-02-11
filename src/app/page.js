@@ -36,7 +36,9 @@ export default function Home() {
 
   return (
     <>
-    {isLoading && <LoadingScreen/>}
+    <AnimatePresence mode="wait">
+      {isLoading && <LoadingScreen/>}
+    </AnimatePresence>
     <InfiniteText/>
     <main className={styles.main}>
       <Heading heading={"Projects"}/>
