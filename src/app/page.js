@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 // import Lenis from '@studio-freight/lenis'
 import LoadingScreen from "@/LoadingScreen/loading";
 import About from "@/About/about";
+import Footer from "@/Footer/footer";
 
 
 export default function Home() {
@@ -54,6 +55,7 @@ export default function Home() {
       <Gallery/>
       <Heading heading={"Skills"}/>
       <Parallax/>
+      <Footer/>
     </main>
     </>
   );

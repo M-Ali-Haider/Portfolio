@@ -5,6 +5,7 @@ body{
   align-items: center;
   gap:10vw;
   cursor: wait;
+  transition: background-color 0.2s linear;
 }
 ::-webkit-scrollbar{
   display: none;
