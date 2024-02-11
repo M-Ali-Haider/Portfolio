@@ -6,24 +6,24 @@ import Parallax from "@/parallax/parallax";
 import { useEffect } from "react";
 import Heading from "@/headingAnimation/heading";
 
-import LocomotiveScroll from "locomotive-scroll";
-// import Lenis from '@studio-freight/lenis'
+// import LocomotiveScroll from "locomotive-scroll";
+import Lenis from '@studio-freight/lenis'
 
 
 export default function Home() {
 
-  useEffect(()=>{
-    const locomotiveScroll = new LocomotiveScroll();
-  },[])
-
   // useEffect(()=>{
-  //   const lenis = new Lenis()
-  //   function raf(time) {
-  //     lenis.raf(time)
-  //     requestAnimationFrame(raf)
-  //   }
-  //   requestAnimationFrame(raf)
+  //   const locomotiveScroll = new LocomotiveScroll();
   // },[])
+
+  useEffect(()=>{
+    const lenis = new Lenis()
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+  },[])
 
   return (
     <>
