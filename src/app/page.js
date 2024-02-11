@@ -7,28 +7,35 @@ import { useEffect, useState } from "react";
 import Heading from "@/headingAnimation/heading";
 import { AnimatePresence } from "framer-motion";
 
-// import LocomotiveScroll from "locomotive-scroll";
-import Lenis from '@studio-freight/lenis'
+// import Lenis from '@studio-freight/lenis'
 import LoadingScreen from "@/LoadingScreen/loading";
+import About from "@/About/about";
 
 
 export default function Home() {
 
-  // useEffect(()=>{
-  //   const locomotiveScroll = new LocomotiveScroll();
-  // },[])
-
   useEffect(()=>{
-    const lenis = new Lenis()
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
+
+
+    // const lenis = new Lenis()
+    // function raf(time) {
+    //   lenis.raf(time)
+    //   requestAnimationFrame(raf)
+    // }
+    // requestAnimationFrame(raf)
+
+
+    (
+      async () =>{
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
 
     setTimeout(()=>{
       setIsLoading(false);
       document.body.style.cursor='default'
+      window.scrollTo(0,0)
     },2000)
   },[])
 
@@ -41,6 +48,8 @@ export default function Home() {
     </AnimatePresence>
     <InfiniteText/>
     <main className={styles.main}>
+      <Heading heading={"About"}/>
+      <About/>
       <Heading heading={"Projects"}/>
       <Gallery/>
       <Heading heading={"Skills"}/>
