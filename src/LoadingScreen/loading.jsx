@@ -15,6 +15,7 @@ export default function LoadingScreen() {
   },[index])
   return (
     <div className={styles.loadingScreen}>
+      <div className={styles.loadingScreenRelative}>
       {
         [...Array(6)].map((_,i)=>{
           return(
@@ -31,6 +32,7 @@ export default function LoadingScreen() {
         })
       }
       <h1 className={styles.loadingScreenHeading}>{words[index]}</h1>
+      </div>
     </div>
   )
 }
