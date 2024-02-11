@@ -81,7 +81,7 @@ export default function Gallery() {
             return(
               <div key={`modal_${index}`} className={styles.modal} style={{backgroundColor:color}}>
                 <Image
-                  src={`/images/${src}`}
+                  src={`/Portfolio/images/${src}`}
                   width={300}
                   height={0}
                   alt='Project Images'
