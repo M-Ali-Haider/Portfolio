@@ -14,25 +14,33 @@ export default function LoadingScreen() {
     }, index == 0 ? 1000 : 200)
   },[index])
   return (
+    <>
     <div className={styles.loadingScreen}>
-      <div className={styles.loadingScreenRelative}>
       {
         [...Array(6)].map((_,i)=>{
           return(
             <motion.div
-              key={i} 
-              variants={slideUp} 
-              initial="initial" 
-              exit="exit"
-              custom={i}  
-              className={styles.loadingScreenUnit}
+            key={i} 
+            variants={slideUp} 
+            initial="initial" 
+            exit="exit"
+            custom={i}  
+            className={styles.loadingScreenUnit}
             >
             </motion.div>
           )
         })
       }
-      <h1 className={styles.loadingScreenHeading}>{words[index]}</h1>
-      </div>
     </div>
+    <motion.div 
+      className={styles.loadingScreenHeadingContainer}
+      variants={slideUp}
+      initial="initial"
+      exit="exit"
+      custom={3}
+    >
+      <h2>{words[index]}</h2>
+    </motion.div>
+    </>
   )
 }
