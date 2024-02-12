@@ -23,6 +23,8 @@ export default function InfiniteText() {
   let xPercent=0;
   let direction = -1;
 
+  const scaler = isMobile?0.05:0.1
+
   const animation = () =>{
     if(xPercent<= -100){
       xPercent=0;
@@ -32,7 +34,7 @@ export default function InfiniteText() {
     }
     gsap.set(firstText.current, {xPercent:xPercent})
     gsap.set(secondText.current, {xPercent:xPercent})
-    xPercent += 0.1 * direction
+    xPercent += scaler * direction
     requestAnimationFrame(animation)
   }
 
