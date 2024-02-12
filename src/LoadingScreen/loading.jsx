@@ -2,9 +2,9 @@ import styles from './loading.module.css'
 import { slideUp } from './animation'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { words } from '@/Data/loadingScreen'
 export default function LoadingScreen() {
 
-  const words = ["Cos","Thats","How","I","Do","It"]
   const [index,setIndex]=useState(0);
 
   useEffect(()=>{
