@@ -26,12 +26,12 @@ export default function Home() {
     // requestAnimationFrame(raf)
 
 
-    (
-      async () =>{
-        const LocomotiveScroll = (await import('locomotive-scroll')).default
-        const locomotiveScroll = new LocomotiveScroll();
-      }
-    )()
+    // (
+    //   async () =>{
+    //     const LocomotiveScroll = (await import('locomotive-scroll')).default
+    //     const locomotiveScroll = new LocomotiveScroll();
+    //   }
+    // )()
 
     setTimeout(()=>{
       setIsLoading(false);
