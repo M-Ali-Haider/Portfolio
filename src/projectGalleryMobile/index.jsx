@@ -1,6 +1,7 @@
 import styles from './style.module.css'
 import { projects } from '@/Data/projects'
 import Image from 'next/image'
+import nextConfig from '../../next.config'
 export default function ProjectGalleryMobile() {
   return (
     <div className={styles.projectGalleryMobile}>
@@ -19,7 +20,7 @@ const Project = ({project}) =>{
             <div className={styles.projectUp}>
                 <div className={styles.projectImage} style={{backgroundColor:project.color}}>
                     <Image
-                        src={`/Portfolio/images/${project.src}`}
+                        src={`${nextConfig.basePath}/images/${project.src}`}
                         width={300}
                         height={0}
                         alt='Project Gallery'

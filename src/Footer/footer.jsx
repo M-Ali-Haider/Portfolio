@@ -3,6 +3,7 @@ import styles from './footer.module.css'
 import { motion,useInView } from 'framer-motion'
 import { slideUp } from '@/About/aboutAnimation'
 import { scaleAnimation } from '@/scaleAnimation'
+import { socials } from '@/Data/contact'
 
 
 export default function Footer() {
@@ -42,9 +43,10 @@ export default function Footer() {
                     onMouseEnter={()=>{document.body.style.backgroundColor="#01411c"}} 
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
-                    +92 320 5657362
+                    {socials.phone}
                 </motion.div>
-                <motion.div
+                <motion.a
+                    href={`mailto:${socials.email}`}
                     variants={scaleAnimation}
                     initial="initial"
                     animate={socialsInView?"open":"closed"}
@@ -53,8 +55,10 @@ export default function Footer() {
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
                     Gmail
-                </motion.div>
-                <motion.div 
+                </motion.a>
+                <motion.a 
+                    href={socials.linkedin}
+                    target='_blank'
                     variants={scaleAnimation}
                     initial="initial"
                     animate={socialsInView?"open":"closed"}
@@ -63,7 +67,7 @@ export default function Footer() {
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
                     LinkedIn
-                </motion.div>
+                </motion.a>
             </div>
         </div>
     </footer>

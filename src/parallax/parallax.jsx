@@ -4,6 +4,7 @@ import { useTransform, useScroll, motion } from 'framer-motion'
 import { useRef } from 'react'
 import useDimension from '../useDimension'
 import { skills } from '../Data/skills'
+import nextConfig from '../../next.config'
 
 export default function Parallax() {
   const container = useRef(null)
@@ -38,7 +39,7 @@ const Column = ({images, y=0})=>{
           const {src,color}=image;
           return <div key={index} className={styles.imageContainer} style={{backgroundColor:color}}>
             <Image
-              src={`/Portfolio/skills/${src}`}
+              src={`${nextConfig.basePath}/skills/${src}`}
               width={1}
               height={1}
               alt='parallax image'  

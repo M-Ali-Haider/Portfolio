@@ -4,6 +4,7 @@ import styles from './style.module.css'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import nextConfig from '../../next.config'
 
 export default function InfiniteText() {
 
@@ -58,7 +59,7 @@ export default function InfiniteText() {
       <div className={styles.background}>
         <div className={styles.shader}></div>
         <Image
-          src={`/Portfolio/images/bgdark.jpg`}
+          src={`${nextConfig.basePath}/images/bgdark.jpg`}
           fill={true}
           alt='background image'
         />

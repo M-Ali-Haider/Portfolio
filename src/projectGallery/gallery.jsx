@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
+import nextConfig from '../../next.config'
 
 const scaleAnimation = {
   initial: {scale: 0, x:"-50%", y:"-50%"},
@@ -81,7 +82,7 @@ export default function Gallery() {
             return(
               <div key={`modal_${index}`} className={styles.modal} style={{backgroundColor:color}}>
                 <Image
-                  src={`/Portfolio/images/${src}`}
+                  src={`${nextConfig.basePath}/images/${src}`}
                   width={300}
                   height={0}
                   alt='Project Images'

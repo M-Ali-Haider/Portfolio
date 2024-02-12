@@ -4,6 +4,7 @@ import { aboutData } from '../Data/aboutData'
 import { motion, useInView } from 'framer-motion'
 import { slideUp,opacity } from './aboutAnimation'
 import { useEffect, useRef, useState } from 'react'
+import nextConfig from '../../next.config'
 export default function About() {
 
   const aboutArray=[
@@ -64,7 +65,7 @@ export default function About() {
         data-scroll-speed={isMobile?0.2:0.1}
       >
         <Image
-          src={`/Portfolio/images/about.jpg`}
+          src={`${nextConfig.basePath}/images/about.jpg`}
           fill={true}
           alt='My Pic'
         />

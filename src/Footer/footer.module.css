@@ -38,6 +38,8 @@
     cursor: pointer;
     border: 1px solid rgb(30, 30, 30);
     transition: background-color 0.2s linear;
+    color: white;
+    text-decoration: none;
 }
 .footerSocialsUnit:nth-child(1):hover{
     background-color: #01411c;
