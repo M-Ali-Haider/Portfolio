@@ -42,3 +42,12 @@
     padding-right: 50px;
     box-sizing: content-box;
 }
+
+@media (max-width:600px){
+    .background{
+        height: 65vh;
+    }
+    .loopContainer{
+        font-size: 16vw;
+    }
+}

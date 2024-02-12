@@ -5,3 +5,8 @@
     font-size: 64px;
     color: #fff;
 }
+@media (max-width:650px) {
+    .masku{
+        font-size: 50px;
+    }
+}

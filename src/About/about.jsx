@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { aboutData } from './aboutData'
 import { motion, useInView } from 'framer-motion'
 import { slideUp,opacity } from './aboutAnimation'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 export default function About() {
 
   const aboutArray=[
@@ -17,9 +17,19 @@ export default function About() {
   const inView = useInView(aboutContainer)
   const descInView = useInView(aboutDescription)
 
+  const [isMobile,setIsMobile]=useState(false);
+  useEffect(()=>{
+    const handleResize=()=>{
+      setIsMobile(window.innerWidth < 600)
+    }
+    handleResize()
+    window.addEventListener("resize",handleResize)
+    return () => window.removeEventListener("resize",handleResize)
+  },[])
+
   return (
     <div className={styles.aboutContainer} ref={aboutContainer}>
-      <div className={styles.aboutDescriptions} ref={aboutDescription} data-scroll data-scroll-speed={0.3}>
+      <div className={styles.aboutDescriptions} ref={aboutDescription} data-scroll data-scroll-speed={isMobile?0.2:0.3}>
         {
           aboutArray.map((para,index)=>{
             return(
@@ -48,9 +58,10 @@ export default function About() {
       <motion.div 
         className={styles.aboutImage}
         variants={opacity}
+        initial="initial"
         animate={inView?"open":"closed"}
         data-scroll
-        data-scroll-speed={0.1}
+        data-scroll-speed={isMobile?0.2:0.1}
       >
         <Image
           src={`/Portfolio/images/about.jpg`}
