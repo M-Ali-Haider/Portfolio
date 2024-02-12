@@ -1,35 +1,11 @@
-"use client"
 import styles from './parallax.module.scss'
 import Image from 'next/image'
 import { useTransform, useScroll, motion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-// import Lenis from '@studio-freight/lenis'
+import { useRef } from 'react'
 import useDimension from '../useDimension'
 import { skills } from './skills'
 
 export default function Parallax() {
-
-  // useEffect(()=>{
-  //   const lenis = new Lenis()
-  //   function raf(time){
-  //     lenis.raf(time)
-  //     requestAnimationFrame(raf)
-  //   }
-  //   requestAnimationFrame(raf)
-  // },[])
-
-  const [isMobile,setIsMobile] = useState(false)
-
-  useEffect(()=>{
-    const handleResize = () =>{
-      setIsMobile(window.innerWidth < 600)
-    }
-    handleResize();
-    window.addEventListener("resize",handleResize);
-    return () => window.removeEventListener("resize",handleResize)
-  },[])
-
-
   const container = useRef(null)
   const { height } = useDimension();
   const {scrollYProgress} = useScroll({
@@ -44,22 +20,10 @@ export default function Parallax() {
     <>
     <div className={styles.parallax}>
       <div ref={container} className={styles.gallery}>
-
-        {
-          isMobile?(
-            <>
-            <Column images={[skills[0],skills[1],skills[2],skills[3],skills[4],skills[5]]} y={y}/>
-            <Column images={[skills[6],skills[7],skills[8],skills[9],skills[10],skills[11]]} y={y3}/>
-            </>
-          ):(
-            <>
-            <Column images={[skills[0],skills[1],skills[2]]} y={y}/>
-            <Column images={[skills[3],skills[4],skills[5]]} y={y2}/>
-            <Column images={[skills[6],skills[7],skills[8]]} y={y3}/>
-            <Column images={[skills[9],skills[10],skills[11]]} y={y4}/>
-            </>
-          )
-        }
+        <Column images={[skills[0],skills[1],skills[2]]} y={y}/>
+        <Column images={[skills[3],skills[4],skills[5]]} y={y2}/>
+        <Column images={[skills[6],skills[7],skills[8]]} y={y3}/>
+        <Column images={[skills[9],skills[10],skills[11]]} y={y4}/>
       </div>
     </div>
     </>

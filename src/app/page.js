@@ -6,38 +6,37 @@ import Parallax from "@/parallax/parallax";
 import { useEffect, useState } from "react";
 import Heading from "@/headingAnimation/heading";
 import { AnimatePresence } from "framer-motion";
-
-// import Lenis from '@studio-freight/lenis'
 import LoadingScreen from "@/LoadingScreen/loading";
 import About from "@/About/about";
 import Footer from "@/Footer/footer";
+import MobileParallax from "@/parallaxMobile";
+import ProjectGalleryMobile from "@/projectGalleryMobile";
 
 
 export default function Home() {
 
+  const [isMobile,setIsMobile] = useState(false);
+
+
+
   useEffect(()=>{
-
-
-    // const lenis = new Lenis()
-    // function raf(time) {
-    //   lenis.raf(time)
-    //   requestAnimationFrame(raf)
-    // }
-    // requestAnimationFrame(raf)
-
-
-    // (
-    //   async () =>{
-    //     const LocomotiveScroll = (await import('locomotive-scroll')).default
-    //     const locomotiveScroll = new LocomotiveScroll();
-    //   }
-    // )()
-
+    (
+      async () =>{
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+        const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
     setTimeout(()=>{
       setIsLoading(false);
       document.body.style.cursor='default'
       window.scrollTo(0,0)
     },2000)
+    const handleResize=()=>{
+      setIsMobile(window.innerWidth<600)
+    }
+    handleResize()
+    window.addEventListener("resize",handleResize);
+    return()=>window.removeEventListener("resize",handleResize);
   },[])
 
   const [isLoading, setIsLoading] = useState(true)
@@ -52,9 +51,21 @@ export default function Home() {
       <Heading heading={"About"}/>
       <About/>
       <Heading heading={"Projects"}/>
-      <Gallery/>
+      {
+        isMobile?(
+          <ProjectGalleryMobile/>
+        ):(
+          <Gallery/>
+        )
+      }
       <Heading heading={"Skills"}/>
-      <Parallax/>
+      {
+        isMobile?(
+          <MobileParallax/>
+        ):(
+          <Parallax/>
+        )
+      }
       <Footer/>
     </main>
     </>

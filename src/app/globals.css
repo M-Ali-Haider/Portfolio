@@ -6,6 +6,7 @@ body{
   gap:10vw;
   cursor: wait;
   transition: background-color 0.2s linear;
+  color: white;
 }
 ::-webkit-scrollbar{
   display: none;

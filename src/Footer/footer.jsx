@@ -2,12 +2,8 @@ import { useRef } from 'react'
 import styles from './footer.module.css'
 import { motion,useInView } from 'framer-motion'
 import { slideUp } from '@/About/aboutAnimation'
+import { scaleAnimation } from '@/scaleAnimation'
 
-const scaleAnimation = {
-    initial: {scale: 0},
-    open: {scale: 1,transition: {duration: 0.45, ease: [0.76, 0, 0.24, 1]}},
-    closed: {scale: 0,transition: {duration: 0.45, ease: [0.32, 0, 0.67, 0]}}
-}
 
 export default function Footer() {
     const footerContainer = useRef(null)
