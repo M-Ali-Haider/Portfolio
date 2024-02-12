@@ -3,9 +3,17 @@ import styles from './footer.module.css'
 import { motion,useInView } from 'framer-motion'
 import { slideUp } from '@/About/aboutAnimation'
 
+const scaleAnimation = {
+    initial: {scale: 0},
+    open: {scale: 1,transition: {duration: 0.45, ease: [0.76, 0, 0.24, 1]}},
+    closed: {scale: 0,transition: {duration: 0.45, ease: [0.32, 0, 0.67, 0]}}
+}
+
 export default function Footer() {
     const footerContainer = useRef(null)
+    const footerSocials = useRef(null)
     const inView = useInView(footerContainer)
+    const socialsInView = useInView(footerSocials)
     const message = "Let's work together!"
   return (
     <footer className={styles.footer}>
@@ -29,28 +37,37 @@ export default function Footer() {
                     })
                 }
             </p>
-            <div className={styles.footerSocials}>
-                <div 
+            <div className={styles.footerSocials} ref={footerSocials}>
+                <motion.div 
+                    variants={scaleAnimation}
+                    initial="initial"
+                    animate={socialsInView?"open":"closed"}
                     className={styles.footerSocialsUnit}
                     onMouseEnter={()=>{document.body.style.backgroundColor="#01411c"}} 
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
                     +92 320 5657362
-                </div>
-                <div
+                </motion.div>
+                <motion.div
+                    variants={scaleAnimation}
+                    initial="initial"
+                    animate={socialsInView?"open":"closed"}
                     className={styles.footerSocialsUnit} 
                     onMouseEnter={()=>{document.body.style.backgroundColor="red"}} 
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
                     Gmail
-                </div>
-                <div 
+                </motion.div>
+                <motion.div 
+                    variants={scaleAnimation}
+                    initial="initial"
+                    animate={socialsInView?"open":"closed"}
                     className={styles.footerSocialsUnit}
                     onMouseEnter={()=>{document.body.style.backgroundColor="#0a66c2"}} 
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
                     LinkedIn
-                </div>
+                </motion.div>
             </div>
         </div>
     </footer>
