@@ -44,9 +44,6 @@
 }
 
 @media (max-width:600px){
-    .background{
-        height: 105vh;
-    }
     .loopContainer{
         font-size: 30vw;
         bottom: 5%;

@@ -4,19 +4,19 @@ import styles from './style.module.css'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-// import Lenis from '@studio-freight/lenis'
+
 export default function InfiniteText() {
 
-  // useEffect(()=>{
-  //   const lenis = new Lenis()
-  //   function raf(time) {
-  //     lenis.raf(time)
-  //     requestAnimationFrame(raf)
-  //   }
-  //   requestAnimationFrame(raf)
-  // },[])
 
-
+  const [isMobile,setIsMobile] = useState(false);
+  useEffect(()=>{
+    const handleResize=()=>{
+      setIsMobile(window.innerWidth<600)
+    }
+    handleResize()
+    window.addEventListener("resize",handleResize);
+    return()=>window.removeEventListener("resize",handleResize);
+  },[])
   const firstText = useRef(null)
   const secondText = useRef(null)
   const slider = useRef(null)
@@ -48,7 +48,7 @@ export default function InfiniteText() {
         scrub:0.25,
         onUpdate: e => direction = e.direction * -1
       },
-      x:"-300px"
+      x:isMobile?"-100px":"-300px"
     })
   },[])
   return (
