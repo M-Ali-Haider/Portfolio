@@ -68,6 +68,18 @@ export default function Footer() {
                 >
                     LinkedIn
                 </motion.a>
+                <motion.a 
+                    href={socials.github}
+                    target='_blank'
+                    variants={scaleAnimation}
+                    initial="initial"
+                    animate={socialsInView?"open":"closed"}
+                    className={styles.footerSocialsUnit}
+                    onMouseEnter={()=>{document.body.style.backgroundColor="#0a66c2"}} 
+                    onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
+                >
+                    Github
+                </motion.a>
             </div>
         </div>
     </footer>
