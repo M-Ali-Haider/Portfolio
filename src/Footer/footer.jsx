@@ -75,7 +75,7 @@ export default function Footer() {
                     initial="initial"
                     animate={socialsInView?"open":"closed"}
                     className={styles.footerSocialsUnit}
-                    onMouseEnter={()=>{document.body.style.backgroundColor="#0a66c2"}} 
+                    onMouseEnter={()=>{document.body.style.backgroundColor="#22262a"}} 
                     onMouseLeave={()=>{document.body.style.backgroundColor="#121111"}}
                 >
                     Github
