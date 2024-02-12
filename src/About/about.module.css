@@ -21,7 +21,7 @@
 .aboutImage img{
     max-width:85%;
     margin: 0 auto;
-    border-radius:1vw;
+    border-radius:10px;
     height: auto;
     object-fit: contain;
 }
@@ -56,12 +56,6 @@
         min-width: 400px;
         height: 400px;
         position: relative;
-    }
-    .aboutImage img{
-        max-width:85%;
-        margin: 0 auto;
-        border-radius:2vw;
-        height: auto;
     }
     .masku{
         position: relative;
