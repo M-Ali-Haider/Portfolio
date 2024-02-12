@@ -23,6 +23,7 @@
     margin: 0 auto;
     border-radius:1vw;
     height: auto;
+    object-fit: contain;
 }
 .masku{
     position: relative;
