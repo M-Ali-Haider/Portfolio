@@ -1,7 +1,7 @@
 "use client"
 import styles from './gallery.module.css'
 import Project from './project/project'
-import { projects } from './projects'
+import { projects } from '../Data/projects'
 import { useState } from 'react'
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'

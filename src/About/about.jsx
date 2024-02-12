@@ -1,6 +1,6 @@
 import styles from './about.module.css'
 import Image from 'next/image'
-import { aboutData } from './aboutData'
+import { aboutData } from '../Data/aboutData'
 import { motion, useInView } from 'framer-motion'
 import { slideUp,opacity } from './aboutAnimation'
 import { useEffect, useRef, useState } from 'react'

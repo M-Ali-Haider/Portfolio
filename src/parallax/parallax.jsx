@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTransform, useScroll, motion } from 'framer-motion'
 import { useRef } from 'react'
 import useDimension from '../useDimension'
-import { skills } from './skills'
+import { skills } from '../Data/skills'
 
 export default function Parallax() {
   const container = useRef(null)

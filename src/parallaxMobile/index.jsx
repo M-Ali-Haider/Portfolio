@@ -5,7 +5,7 @@ import FromUp from './fromUp'
 import FromUpDown from './fromUpDown'
 import PopUp from './popUp'
 import styles from './style.module.css'
-import { skills } from '@/parallax/skills'
+import { skills } from '@/Data/skills'
 export default function MobileParallax() {
   return (
     <div className={styles.mobileParallax}>

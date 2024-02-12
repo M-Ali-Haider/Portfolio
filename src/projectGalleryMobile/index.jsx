@@ -1,5 +1,5 @@
 import styles from './style.module.css'
-import { projects } from '@/projectGallery/projects'
+import { projects } from '@/Data/projects'
 import Image from 'next/image'
 export default function ProjectGalleryMobile() {
   return (
