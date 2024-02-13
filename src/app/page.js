@@ -38,7 +38,7 @@ export default function Home() {
       window.scrollTo(0,0)
     },2000)
     const handleResize=()=>{
-      setIsMobile(window.innerWidth<600)
+      setIsMobile(window.innerWidth<707)
     }
     handleResize()
     window.addEventListener("resize",handleResize);

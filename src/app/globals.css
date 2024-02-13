@@ -7,7 +7,6 @@ body{
   cursor: wait;
   transition: background-color 0.2s linear;
   color: white;
-  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar{
   display: none;
