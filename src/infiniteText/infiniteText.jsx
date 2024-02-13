@@ -47,7 +47,7 @@ export default function InfiniteText() {
         trigger:document.documentElement,
         start:0,
         end: window.innerHeight,
-        scrub:isMobile?true:0.25,
+        scrub:isMobile?false:0.25,
         onUpdate: e => direction = e.direction * -1
       },
       x:isMobile?"0px":"-300px"
