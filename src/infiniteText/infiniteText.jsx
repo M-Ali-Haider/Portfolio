@@ -50,7 +50,7 @@ export default function InfiniteText() {
         scrub:isMobile?true:0.25,
         onUpdate: e => direction = e.direction * -1
       },
-      x:isMobile?"-10px":"-300px"
+      x:isMobile?"0px":"-300px"
     })
   },[])
   return (
