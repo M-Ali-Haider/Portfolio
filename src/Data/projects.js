@@ -31,4 +31,12 @@ export const projects=[
         tech:'Xampp & PHP',
         type:'Full Stack',
     },
+    {
+        name:'AASC',
+        src:'aasc.webp',
+        link:'https://aasc.pk',
+        color:"#005a7e",
+        tech:'Vanilla JS',
+        type:'Static Site',
+    },
 ]
